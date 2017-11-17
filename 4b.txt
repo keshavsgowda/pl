@@ -1,0 +1,11 @@
+import pandas as pd
+titanic_df = pd.read_csv("trai.csv")
+print("============Data headers============")
+print( titanic_df.head())
+titanic_df.info()
+print(titanic_df.describe())
+titanic_df = titanic_df.drop(['PassengerId','Name','Ticket'], axis=1)
+print("=======Check if columns were dropped ========")
+print(titanic_df.head())
+titanic_df["Embarked"]=titanic_df["Embarked"].fillna("XX")
+print(titanic_df["Embarked"])
